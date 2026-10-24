@@ -1,49 +1,81 @@
+import Image from "next/image";
+
 const projects = [
   {
     number: "01",
-    title: "Creator Workflow Automation System",
+    title: "Trading Signal Monitoring System",
     description:
-      "An internal operations system built to organize creator collaborations, prepare content, schedule posts, manage captions, and reduce repetitive manual work.",
+      "A Python command-line system that fetches market data through APIs, evaluates trading conditions, and generates structured candidate signals in a repeatable, single-pass workflow.",
     contribution:
-      "I contributed to building, maintaining, and improving the system. My work included workflow logic, browser automation, scheduling, database integration, testing, troubleshooting, and deployment support.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Playwright",
-      "Supabase",
-      "Vercel",
-      "Telegram",
+      "I worked on the Python modules, API integration, signal-processing logic, configuration management, error handling, testing, and debugging.",
+    challenges: [
+      "Combining data from two timeframes into structured candidate signals.",
+      "Handling missing data and API failures with offline regression tests.",
+      "Managing environment variables safely, keeping credentials out of diagnostic output, and validating syntax and dependencies in CI.",
     ],
+    technologies: [
+      "Python",
+      "REST APIs",
+      "python-binance",
+      "python-dotenv",
+      "unittest",
+      "GitHub Actions",
+    ],
+    validation: "13 automated tests • CI validated",
+    github: "https://github.com/tayken05/trading-signal-monitoring-system",
+    image: null,
   },
   {
     number: "02",
-    title: "Creator Mass Message Scheduling System",
+    title: "Workflow Automation Platform",
     description:
-      "A browser automation system built to schedule creator mass messages, set publishing dates and times, select recipient and exclusion lists, rotate messages without repetition, and maintain activity logs.",
+      "A full-stack workflow automation system designed to coordinate scheduled browser tasks, account workflows, job execution, and operational processes through a web dashboard and automated workers.",
     contribution:
-      "I built and maintained core parts of the scheduling and message-selection workflow. My work included browser automation, AdsPower profile connections, CSV-based message rotation, recipient filtering, testing, troubleshooting, and reliability improvements.",
+      "I contributed to workflow logic, database-backed jobs, scheduling, browser automation, state management, API integrations, testing, debugging, deployment, and failure investigation.",
+    challenges: [
+      "Coordinating scheduled jobs, account assignments, and browser workers.",
+      "Tracking job state in the database and investigating execution failures.",
+    ],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Playwright",
+      "Supabase / PostgreSQL",
+      "GitHub",
+      "Vercel",
+      "APIs",
+    ],
+    validation: null,
+    github: null,
+    image: {
+      src: "/s4s-dashboard.png",
+      alt: "Workflow platform dashboard showing account assignments and workflow state",
+    },
+  },
+  {
+    number: "03",
+    title: "Browser Automation & Scheduling System",
+    description:
+      "A browser automation system built to execute recurring web-based tasks according to schedules, account assignments, rotation rules, and workflow conditions.",
+    contribution:
+      "I built and maintained core scheduling and rotation workflows, including browser-profile connections, duplicate prevention, activity logging, error handling, debugging, and QA testing.",
+    challenges: [
+      "Applying account assignments, schedule rules, and browser-profile connections consistently.",
+      "Rotating tasks without repetition and logging execution for failure investigation.",
+    ],
     technologies: [
       "Python",
       "Playwright",
       "AdsPower",
       "CSV",
-      "Browser Automation",
     ],
-  },
-  {
-    number: "03",
-    title: "Trading Signal Monitoring System",
-    description:
-      "A monitoring workflow designed to track defined market signals and make important updates easier to review.",
-    contribution:
-      "I worked on the system structure, monitoring logic, automation flow, testing, documentation, troubleshooting, and maintenance.",
-    technologies: [
-      "Python",
-      "Automation",
-      "APIs",
-      "GitHub",
-      "Data Monitoring",
-    ],
+    validation: null,
+    github: null,
+    image: {
+      src: "/mass-message-automation.png",
+      alt: "Browser scheduling interface with Python automation activity logs",
+    },
   },
 ];
 
@@ -119,64 +151,78 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="border-b border-slate-200 bg-slate-50">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[1.4fr_0.6fr] md:py-32">
-          <div>
-            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">
-              Technical Operations · Automation · Creator Operations
-            </p>
-
-            <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-7xl">
-              Helping creator businesses scale through better systems and
-              automation.
+      <section
+        aria-labelledby="hero-title"
+        className="border-b border-slate-200 bg-slate-50"
+      >
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 sm:py-20 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12 lg:py-24">
+          <div className="min-w-0">
+            <h1
+              id="hero-title"
+              className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+            >
+              Taylor Awoesla Kennedy
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
-              I combine operations experience with technical problem-solving to
-              improve workflows, automate repetitive tasks, and help teams work
-              more efficiently.
+            <p className="mt-5 text-2xl font-semibold leading-snug tracking-tight text-blue-700 sm:text-3xl">
+              Software Developer &amp; Automation Builder
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              I build practical software, automation systems, and AI-assisted
+              workflows using JavaScript, TypeScript, Python, Next.js, Playwright,
+              APIs, and modern developer tools. My work focuses on solving real
+              operational problems through reliable software, browser automation,
+              workflow design, testing, and debugging.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
-                href="#contact"
-                className="rounded-md bg-blue-700 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-800"
+                href="#projects"
+                className="inline-flex min-h-12 items-center justify-center rounded-md bg-blue-700 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700"
               >
-                Contact Me
+                View My Work
               </a>
 
               <a
                 href="https://github.com/tayken05"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-md border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100"
+                className="inline-flex min-h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700"
               >
-                View GitHub
+                GitHub
               </a>
 
               <a
                 href="/resume.pdf"
-                className="rounded-md border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100"
+                download
+                className="inline-flex min-h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700"
               >
                 Download Resume
+              </a>
+
+              <a
+                href="#contact"
+                className="inline-flex min-h-12 items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700"
+              >
+                Contact Me
               </a>
             </div>
           </div>
 
-          <div className="flex items-end">
-            <div className="w-full rounded-xl border border-slate-200 bg-white p-7 shadow-sm">
-              <p className="text-sm font-semibold text-slate-500">
-                Areas of focus
-              </p>
+          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
+            <h2 className="text-sm font-semibold text-slate-500">
+              Areas of focus
+            </h2>
 
-              <div className="mt-5 space-y-4 text-base font-medium">
-                <p>Workflow automation</p>
-                <p>Creator operations</p>
-                <p>Technical troubleshooting</p>
-                <p>Process improvement</p>
-                <p>Team coordination</p>
-              </div>
-            </div>
+            <ul className="mt-5 space-y-4 text-base font-medium text-slate-800">
+              <li>Software Development</li>
+              <li>Workflow Automation</li>
+              <li>Browser Automation</li>
+              <li>Backend &amp; API Integration</li>
+              <li>Debugging &amp; Testing</li>
+              <li>Technical Problem Solving</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -213,15 +259,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="border-y border-slate-200 bg-slate-50">
+      <section
+        id="projects"
+        aria-labelledby="projects-title"
+        className="border-y border-slate-200 bg-slate-50"
+      >
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">
               Selected Projects
             </p>
 
-            <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
-              Systems built to solve real operational problems.
+            <h2
+              id="projects-title"
+              className="mt-4 text-3xl font-bold tracking-tight md:text-4xl"
+            >
+              Software and automation built to solve practical problems.
             </h2>
           </div>
 
@@ -229,49 +282,66 @@ export default function Home() {
             {projects.map((project) => (
               <article
                 key={project.title}
+                aria-labelledby={`project-${project.number}`}
                 className="grid overflow-hidden rounded-xl border border-slate-200 bg-white md:grid-cols-[0.8fr_1.2fr]"
               >
-                <div className="overflow-hidden border-b border-slate-200 bg-slate-100 md:border-b-0 md:border-r">
-                  {project.number === "01" ? (
-                    <img
-                      src="/s4s-dashboard.png"
-                      alt="Creator workflow automation dashboard"
-                      className="h-full min-h-72 w-full object-cover"
-                    />
-                  ) : project.number === "02" ? (
-                    <img
-                      src="/mass-message-automation.png"
-                      alt="Mass message scheduling automation workflow"
-                      className="h-full min-h-72 w-full object-cover"
-                    />
-                  ) : project.number === "03" ? (
-                    <img
-                      src="/trading-signal-bot.png"
-                      alt="Trading signal monitoring and notification system"
-                      className="h-full min-h-72 w-full object-cover"
+                <div className="relative min-h-72 overflow-hidden border-b border-slate-200 bg-slate-100 md:border-b-0 md:border-r">
+                  {project.image ? (
+                    <Image
+                      src={project.image.src}
+                      alt={project.image.alt}
+                      fill
+                      sizes="(max-width: 767px) calc(100vw - 3rem), (max-width: 1152px) 40vw, 442px"
+                      className="object-contain"
                     />
                   ) : (
-                    <div className="flex min-h-72 items-center justify-center p-8">
-                      <div className="text-center">
-                        <p className="text-5xl font-bold text-slate-300">
-                          {project.number}
+                    <div className="flex h-full items-center p-6 sm:p-8">
+                      <div className="w-full">
+                        <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
+                          Monitoring workflow
                         </p>
-                        <p className="mt-4 text-sm font-medium text-slate-500">
-                          Project screenshot will be added here
-                        </p>
+                        <ol className="mt-5 list-inside list-decimal space-y-4 text-sm font-semibold text-slate-800">
+                          <li className="rounded-lg border border-slate-200 bg-white p-4">
+                            Market data
+                            <p className="mt-2 font-normal leading-6 text-slate-600">
+                              Binance Futures REST API
+                            </p>
+                          </li>
+                          <li className="rounded-lg border border-slate-200 bg-white p-4">
+                            Signal evaluation
+                            <p className="mt-2 font-normal leading-6 text-slate-600">
+                              Levels, patterns, and timeframe checks
+                            </p>
+                          </li>
+                          <li className="rounded-lg border border-slate-200 bg-white p-4">
+                            Structured output
+                            <p className="mt-2 font-normal leading-6 text-slate-600">
+                              Candidate signals in the console
+                            </p>
+                          </li>
+                        </ol>
                       </div>
                     </div>
                   )}
                 </div>
 
-                <div className="p-8 md:p-10">
+                <div className="min-w-0 p-6 sm:p-8 md:p-10">
                   <p className="text-sm font-semibold text-blue-700">
                     PROJECT {project.number}
                   </p>
 
-                  <h3 className="mt-3 text-2xl font-bold tracking-tight">
+                  <h3
+                    id={`project-${project.number}`}
+                    className="mt-3 text-2xl font-bold tracking-tight"
+                  >
                     {project.title}
                   </h3>
+
+                  {project.validation && (
+                    <p className="mt-4 inline-block rounded-md border border-blue-200 bg-blue-50 px-3 py-2 text-sm font-semibold text-blue-700">
+                      {project.validation}
+                    </p>
+                  )}
 
                   <div className="mt-6">
                     <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
@@ -291,6 +361,17 @@ export default function Home() {
                     </p>
                   </div>
 
+                  <div className="mt-6">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                      Technical challenges
+                    </p>
+                    <ul className="mt-2 list-disc space-y-2 pl-5 leading-7 text-slate-600 marker:text-slate-400">
+                      {project.challenges.map((challenge) => (
+                        <li key={challenge}>{challenge}</li>
+                      ))}
+                    </ul>
+                  </div>
+
                   <div className="mt-7 flex flex-wrap gap-2">
                     {project.technologies.map((technology) => (
                       <span
@@ -301,6 +382,17 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
+
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-md bg-blue-700 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700 sm:w-auto"
+                    >
+                      View on GitHub
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
